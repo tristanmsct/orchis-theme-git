@@ -1,11 +1,9 @@
 # Maintainer: Mark Wagie <mark dot wagie at proton dot me>
 pkgname=(
   'orchis-theme-git'
-  'orchis-dracula-theme-git'
-  'orchis-nord-theme-git'
 )
 pkgbase=orchis-theme-git
-pkgver=2025.04.25.r0.g5b73376
+pkgver=2025.04.25.r34.gff798aa
 pkgrel=1
 pkgdesc="A Material Design theme for GNOME/GTK based desktop environments."
 arch=('any')
@@ -38,33 +36,9 @@ package_orchis-theme-git() {
 
   cd Orchis-theme
   install -d "$pkgdir/usr/share/themes"
-  ./install.sh -t all --tweaks primary submenu -d "$pkgdir/usr/share/themes"
-
-  # Wallpapers
-  install -Dm644 wallpaper/*.jpg -t \
-    "$pkgdir/usr/share/backgrounds/orchis/"
-
-  # Firefox theme
-  install -d "$pkgdir/usr/share/doc/${pkgname%-git}"
-  cp -r src/firefox "$pkgdir/usr/share/doc/${pkgname%-git}/"
-}
-
-package_orchis-dracula-theme-git() {
-  pkgdesc+=" (dracula variant)"
-  provides=("${pkgname%-git}")
-  conflicts=("${pkgname%-git}")
-
-  cd Orchis-theme
-  install -d "$pkgdir/usr/share/themes"
-  ./install.sh -t all --tweaks primary submenu dracula -d "$pkgdir/usr/share/themes"
-}
-
-package_orchis-nord-theme-git() {
-  pkgdesc+=" (nord variant)"
-  provides=("${pkgname%-git}")
-  conflicts=("${pkgname%-git}")
-
-  cd Orchis-theme
-  install -d "$pkgdir/usr/share/themes"
-  ./install.sh -t all --tweaks primary submenu nord -d "$pkgdir/usr/share/themes"
+  ./install.sh -t all -c light dark -s compact -i arch -d "$pkgdir/usr/share/themes"
+  mv "$pkgdir/usr/share/themes/Orchis-Dark-Compact" "$pkgdir/usr/share/themes/Orchis-Blue-Dark-Compact"
+  mv "$pkgdir/usr/share/themes/Orchis-Light-Compact" "$pkgdir/usr/share/themes/Orchis-Blue-Light-Compact"
+  rm -rf "$pkgdir"/usr/share/themes/*-hdpi
+  rm -rf "$pkgdir"/usr/share/themes/*-xhdpi
 }
