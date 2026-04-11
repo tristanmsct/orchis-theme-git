@@ -3,7 +3,7 @@ pkgname=(
   'orchis-theme-git'
 )
 pkgbase=orchis-theme-git
-pkgver=r699.g174e929
+pkgver=2025.04.25.r699.g174e929
 pkgrel=1
 pkgdesc="A Material Design theme for GNOME/GTK based desktop environments."
 arch=('any')
@@ -27,7 +27,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd Orchis-theme
-  printf "r%s.g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+  printf "2025.04.25.r%s.g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
 }
 
 package_orchis-theme-git() {
