@@ -1,7 +1,7 @@
 pkgbase = orchis-theme-git
 	pkgdesc = A Material Design theme for GNOME/GTK based desktop environments.
-	pkgver = 2025.04.25.r0.g5b73376
-	pkgrel = 1
+	pkgver = 2026.07.07.r5.ga4c48a4
+	pkgrel = 2
 	url = https://github.com/vinceliuice/Orchis-theme
 	install = orchis-theme.install
 	arch = any
@@ -20,13 +20,3 @@ pkgbase = orchis-theme-git
 pkgname = orchis-theme-git
 	provides = orchis-theme
 	conflicts = orchis-theme
-
-pkgname = orchis-dracula-theme-git
-	pkgdesc = A Material Design theme for GNOME/GTK based desktop environments. (dracula variant)
-	provides = orchis-dracula-theme
-	conflicts = orchis-dracula-theme
-
-pkgname = orchis-nord-theme-git
-	pkgdesc = A Material Design theme for GNOME/GTK based desktop environments. (nord variant)
-	provides = orchis-nord-theme
-	conflicts = orchis-nord-theme

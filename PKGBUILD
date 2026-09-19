@@ -1,9 +1,7 @@
 # Maintainer: Mark Wagie <mark dot wagie at proton dot me>
-pkgname=(
-  'orchis-theme-git'
-)
+pkgname='orchis-theme-git'
 pkgbase=orchis-theme-git
-pkgver=2026.07.07.r0.g29975e3
+pkgver=2026.07.07.r5.ga4c48a4
 pkgrel=1
 pkgdesc="A Material Design theme for GNOME/GTK based desktop environments."
 arch=('any')
@@ -35,7 +33,6 @@ package_orchis-theme-git() {
   conflicts=("${pkgname%-git}")
 
   cd Orchis-theme
-  install -d "$pkgdir/usr/share/themes"
   ./install.sh -t all -c light dark -s compact -i arch -d "$pkgdir/usr/share/themes"
   mv "$pkgdir/usr/share/themes/Orchis-Dark-Compact" "$pkgdir/usr/share/themes/Orchis-Blue-Dark-Compact"
   mv "$pkgdir/usr/share/themes/Orchis-Light-Compact" "$pkgdir/usr/share/themes/Orchis-Blue-Light-Compact"
